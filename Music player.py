@@ -100,12 +100,12 @@ class Controls():
             while it.hasNext():
                 if it.fileInfo().isDir() == False and it.filePath() != '.':
                     fInfo = it.fileInfo()
-                    if fInfo.suffix() in ('mp3', 'ogg', 'wav', 'm4a'):
+                    if fInfo.suffix() in ('mp3'):
                         self.playlist.addMedia(QMediaContent(QUrl.fromLocalFile(it.filePath())))
                 it.next()
             if it.fileInfo().isDir() == False and it.filePath() != '.':
                 fInfo = it.fileInfo()
-                if fInfo.suffix() in ('mp3', 'ogg', 'wav', 'm4a'):
+                if fInfo.suffix() in ('mp3'):
                     self.playlist.addMedia(QMediaContent(QUrl.fromLocalFile(it.filePath())))
 
     def playhandler(self):
@@ -229,7 +229,7 @@ class App(QMainWindow,Controls,volume):
         # Add file menu
         menubar = self.menuBar()
         filemenu = menubar.addMenu('File')
-        windowmenu = menubar.addMenu('Window')
+        windowmenu = menubar.addMenu('Theams')
         self.setWindowIcon(QIcon('logo1.ico'))
 
         fileAct = QAction('Open File', self)
